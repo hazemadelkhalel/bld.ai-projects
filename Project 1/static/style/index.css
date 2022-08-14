@@ -155,10 +155,7 @@
     font-size: 18px;
 }
 .text2{
-    display: grid;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    grid-gap: 1.6rem;
+
 }
 .customize2{
     padding-left: 2.4rem;
@@ -178,6 +175,7 @@
     color: rgb(130, 130, 130);
     font-weight: bold;
     padding-bottom: 0.5rem;
+    flex-wrap: wrap;
 }
 .kind div{
     margin-top: 10px;
