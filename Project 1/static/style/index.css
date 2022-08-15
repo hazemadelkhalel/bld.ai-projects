@@ -19,18 +19,20 @@
     font-weight: 400;
     font-size: 0.8rem;
  }
- .icon img{
+ .icon{
     width: 91px;
     height: 34px;
+    cursor:pointer;
  }
  .nav-text{
     margin-left: 15px;
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer;
  }
- .searchbar {
-    display: flex;
-    flex-grow: 1;
-} 
-.searchbar input{
+ .nav-text:hover {color: #5624d0;}
+.searchbar{
     height: 3px;
     border: 1px solid #1c1d1f;
     border-radius: 100px;
@@ -39,13 +41,14 @@
     background-color: #f7f9fa;
     margin: 0 1.2rem;
     display: flex;
+    padding-left: 40px;
     flex-grow: 1;
 }
 .search-icon{
     width: 25px;
     height: 25px;
     top: 25px;
-    left: 208px;
+    left: 220px;
     position:absolute;
     background-color: #f7f9fa;
     background-image: url('../images/search_icon.png');
@@ -112,41 +115,52 @@
 }
 .alarm-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 .alarm2-container{
-    display: block;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 .alarm{
-    width: 1400px;
+    width: 100%;
+    max-width: 134rem;
     position: relative;
 }
 .alarm2{
     display: none;
-    width: 350px;
-    position: relative;
 }
-.text1{
+.textalarm1{
     top: 15%;
-    width:400px;
+    width:100%;
+    max-width: 400px;
     height: 185px;
     background:white;
     position:absolute;
     z-index: 1;
     left: 12%;
     box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
-
 }
-.text1 h1{
+.textalarm2{
+    display: none;
+}
+.textalarm1 h1{
     margin-top: 20px;
     margin-left: 20px;
     font-size: 34px;
 }
-.text1 p{
+.textalarm1 p{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+.textalarm2 h1{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 34px;
+}
+.textalarm2 p{
     margin-top: 10px;
     margin-left: 20px;
     font-size: 18px;
@@ -177,7 +191,8 @@
 }
 .text3{
     background:white;
-    display: block;  
+    display: flex;
+    flex-wrap: wrap;  
     width: 100%;
     max-width: 134rem;
     margin-right: auto;
@@ -191,7 +206,11 @@
     border-style: double;
     border: solid ;
     border-color: silver;
-    padding: 3.2rem;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+
 }
 .text3img{
     display: flex;  
@@ -233,84 +252,25 @@
 .text3s2 img{
     width: 230px;
     margin-left: 20px;
+    
 }
-.caption1{
+.caption{
     top: 150px;
     width:230px;
     height: 100px;
     background:white;
     position:absolute;
     z-index: 1;
-    left: 30px;
+    left: 20px;
     font-size: 14px;
 }
-.caption1 p{
-    margin-top: 5px;
-    font-size: 12px;
-}
-
-.caption2{
-    top: 150px;
-    width:230px;
-    height: 100px;
-    background:white;
-    position:absolute;
-    z-index: 1;
-    left: 30px;
-    font-size: 14px;
-}
-.caption2 p{
-    margin-top: 5px;
-    font-size: 12px;
-}
-
-.caption3{
-    top: 150px;
-    width:230px;
-    height: 100px;
-    background:white;
-    position:absolute;
-    z-index: 1;
-    left: 30px;
-    font-size: 14px;
-}
-.caption3 p{
-    margin-top: 5px;
-    font-size: 12px;
-}
-
-.caption4{
-    top: 150px;
-    width:230px;
-    height: 100px;
-    background:white;
-    position:absolute;
-    z-index: 1;
-    left: 30px;
-    font-size: 14px;
-}
-.caption4 p{
-    margin-top: 5px;
-    font-size: 12px;
-}
-
-.caption5{
-    top: 150px;
-    width:230px;
-    height: 100px;
-    background:white;
-    position:absolute;
-    z-index: 1;
-    left: 30px;
-    font-size: 14px;
-}
-.caption5 p{
+.caption p{
     margin-top: 5px;
     font-size: 12px;
 }
 
 
-@media screen and (max-width: 1000px ) {
+@media screen and (max-width: 1200px ) {
     .nav-text{
         display: none;
     }
@@ -343,8 +303,19 @@
     }
     .alarm2{
         display: flex;
+        width: 100%;
+        max-width: 350px;
+        position: relative;
     }
-    .text1{
+    .textalarm1{
+        display: none;
+    }
+    .textalarm2{
+        display: block;
+        top: 15%;
+        max-width: 400px;
+        z-index: 1;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
         width:350px;
         height: 185px;
         background:white;
@@ -353,8 +324,12 @@
         left: 0.5%;
         margin-top: -20px;
     }
-    .alarm-container{
+    .alarm2-container{
         margin-bottom: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     .search-icon{
         display: none;
