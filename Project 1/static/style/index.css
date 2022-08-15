@@ -19,9 +19,6 @@
     font-weight: 400;
     font-size: 0.8rem;
  }
- .icon{
-    
- }
  .icon img{
     width: 91px;
     height: 34px;
@@ -154,9 +151,6 @@
     margin-left: 20px;
     font-size: 18px;
 }
-.text2{
-
-}
 .customize2{
     padding-left: 2.4rem;
     padding-right: 2.4rem;
@@ -175,7 +169,7 @@
     color: rgb(130, 130, 130);
     font-weight: bold;
     padding-bottom: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap ;
 }
 .kind div{
     margin-top: 10px;
