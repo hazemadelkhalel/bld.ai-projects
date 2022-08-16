@@ -194,11 +194,11 @@
     display: flex;
     flex-wrap: wrap;  
     width: 100%;
-    max-width: 134rem;
+    max-width: 100rem;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
+    padding-left: 1%;
+    padding-right: 1%;
     padding-top: 1.2rem;
     margin: 0;
 }
@@ -206,8 +206,8 @@
     border-style: double;
     border: solid ;
     border-color: silver;
-    padding-left: 3.2rem;
-    padding-right: 3.2rem;
+    padding-left: 1%;
+    padding-right: 1%;
     padding-top: 2.2rem;
     padding-bottom: 2.2rem;
 
@@ -215,6 +215,7 @@
 .text3img{
     display: flex;  
     flex-wrap: wrap;
+    padding-left: 4%;
     padding-bottom: 300px;
 }
 .text3s1{
@@ -303,8 +304,8 @@
     }
     .alarm2{
         display: flex;
-        width: 100%;
-        max-width: 350px;
+        max-width: 85%;
+        left: 7.5%;
         position: relative;
     }
     .textalarm1{
@@ -313,23 +314,23 @@
     .textalarm2{
         display: block;
         top: 15%;
-        max-width: 400px;
+        padding-top: 5px;
+        max-width: 85%;
+        height: 230px;
         z-index: 1;
         box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
-        width:350px;
-        height: 185px;
         background:white;
         margin: 0;
+        left: 7.5%;
         position: relative;
-        left: 0.5%;
         margin-top: -20px;
     }
     .alarm2-container{
+        margin-top: 40px;
         margin-bottom: 250px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
     }
     .search-icon{
         display: none;
