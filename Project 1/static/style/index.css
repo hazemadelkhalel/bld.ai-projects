@@ -223,7 +223,7 @@
     display: flex;
     flex-wrap: wrap;  
     width: 100%;
-    max-width: 100rem;
+    max-width: 200rem;
     margin-right: auto;
     margin-left: auto;
     padding-left: 1%;
@@ -344,8 +344,8 @@
         display: block;
         top: 15%;
         padding-top: 5px;
+        padding-bottom: 50px;
         max-width: 85%;
-        height: 230px;
         z-index: 1;
         box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
         background:white;
