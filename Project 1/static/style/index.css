@@ -3,7 +3,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: udemy sans, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe;
 }
 .nav-container {
     z-index: 1;
@@ -220,14 +219,12 @@
 }
 .text3{
     background:white;
-    display: flex;
-    flex-wrap: wrap;  
-    width: 100%;
+    display: block;
     max-width: 200rem;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 1.2rem;
     margin: 0;
 }
@@ -259,8 +256,8 @@
 }
 .explore{
     background-color: white;
-    width:110px;
-    height: 35px;
+    width:140px;
+    height: 45px;
     margin-top: 22px;
     font-weight: bold;
     text-align: center;
@@ -292,11 +289,14 @@
     position:absolute;
     z-index: 1;
     left: 20px;
-    font-size: 14px;
 }
 .caption p{
+    font-size: 14px;
     margin-top: 5px;
-    font-size: 12px;
+}
+.caption h4{
+    font-size: 20px;
+    margin-top: 5px;
 }
 
 
