@@ -8,13 +8,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-    <body>
+    <body onload="getAlldata()">
         <nav class="nav-container">
             <img class = "toggle" src="../static/images/toggle.png">
             <img class="icon" src="../static/images/Udemy_logo.png">
             <button class="nav-text">Categories</button>
             <form class="searchbar">        
-                <button type="submit" id="search-btn" class="search-icon" onclick="filterFunction()"></button>
+                <button type="submit" id="search-btn" class="search-icon" onclick="filterFunction2()"></button>
                 <input  id = "searchbar" type="text" title="Search" placeholder="Search for anything" onkeyup="cleanSearch()">
                 <div id="myDropdown" class="dropdown-content"> </div>
             </form>
@@ -48,25 +48,21 @@
         </div>
         <section class="text3">
             <div class="kind">
-                <div style="color:black;">Python</div>
-                <div>Excel</div>
-                <div>Web Development</div>
-                <div>JavaScript</div>
-                <div>Data Science</div>
-                <div>AWS Certification</div>
-                <div>Drawing</div>
+                <button id='1' class = "kind-button" onClick="customizeCategory(this.id)">Python
+                <button id='2' class = "kind-button" onClick="customizeCategory(this.id)">Excel
+                <button id='3' class = "kind-button" onClick="customizeCategory(this.id)">Web Development
+                <button id='4' class = "kind-button" onClick="customizeCategory(this.id)">JavaScript
+                <button id='5' class = "kind-button" onClick="customizeCategory(this.id)">Data Science
+                <button id='6' class = "kind-button" onClick="customizeCategory(this.id)">AWS Certification
+                <button id='7' class = "kind-button" onClick="customizeCategory(this.id)">Drawing
             </div>
           <div class="customize3">
             <div class="text3s1">
-                <h1>Expand your career opportunities with Python</h1>
-                <p>Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language.</p>
-                <p>Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning.</p>
-                <p>You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will appeal to...</p>
-                <button class = "explore"> Explore Python</button>
+                
             </div>
             <div id="carouselExampleControls" class="carousel slide" data-interval="carousel">
                 
-                <div class="carousel-inner" style= "padding-bottom: 200px;">
+                <div id = "courses" class="carousel-inner" style= "padding-bottom: 200px;">
                     
                 </div>
                 
@@ -81,7 +77,51 @@
               </div>
             
            </div>
+           <section class="container3">
+            <h2>Top categories</h2>
+            <div class="row top-categories">
+                <a class="col-sm-6 col-md-4 col-lg-3 ">
+                    <img src="../static/images/lohp-category-business-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Business</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="../static/images/lohp-category-design-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Design</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="../static/images/lohp-category-development-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Development</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="../static/images/lohp-category-it-and-software-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">IT and Software</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="../static/images/lohp-category-marketing-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Marketing</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="../static/images/lohp-category-music-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Music</h3>
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="../static/images/lohp-category-personal-development-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Personal Development</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="../static/images/lohp-category-photography-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Photography</h3>
+                </a>
+            </div>
         </section>
+        </section>
+        
     </body>
     <script src="../static/js/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

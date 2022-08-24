@@ -154,6 +154,8 @@
 }
 .alarm{
     width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
     max-width: 134rem;
     position: relative;
 }
@@ -194,8 +196,7 @@
     font-size: 18px;
 }
 .customize2{
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
+    padding-left: 15%;
     padding-top: 1.4rem;
 }
 .customize2 h1{
@@ -203,7 +204,6 @@
 }
 .customize2 p{
     margin-top: 10px;
-    margin-left: 15px;
     font-size: 18px;
 }
 .kind{
@@ -212,6 +212,12 @@
     font-weight: bold;
     padding-bottom: 0.5rem;
     flex-wrap: wrap ;
+}
+.kind-button{
+    border: none;
+    background-color: white;
+    padding-right: 2%;
+    font-size: 17px;
 }
 .kind div{
     margin-top: 10px;
@@ -223,8 +229,8 @@
     max-width: 200rem;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-top: 1.2rem;
     margin: 0;
 }
@@ -256,13 +262,14 @@
 }
 .explore{
     background-color: white;
-    width:140px;
     height: 45px;
     margin-top: 22px;
     font-weight: bold;
     text-align: center;
     cursor:pointer;
-
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .explore:hover{
     background-color: rgb(235, 235, 235);
@@ -298,6 +305,56 @@
     font-size: 20px;
     margin-top: 5px;
 }
+
+
+
+/*
+   last box
+*/
+.container3{
+    position: relative;
+    padding: 20px;
+    width: 1500px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+
+}
+.top-categories{
+    position: relative;
+    display: flex;
+}
+.top-categories a{
+    text-decoration: none;
+}
+.category-title{
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.1rem;
+    margin: 15px 0px;
+    color: black;
+}
+
+.top-categories a:hover{
+    cursor: pointer;
+}
+.top-categories a img{
+    width: 90%;
+    object-fit: contain;
+    transition: transform 100ms cubic-bezier(.2,0,1,.9);
+    
+}
+.top-categories a img:hover{
+    transform: scale(1.05);
+    transition: transform 150ms cubic-bezier(0,0,.38,.9);
+}
+
+
+
+
 
 
 @media screen and (max-width: 1200px ) {
