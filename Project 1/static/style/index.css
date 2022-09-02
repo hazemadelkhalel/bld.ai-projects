@@ -63,6 +63,16 @@
     cursor:pointer;
 
 }
+.haha{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+.haha2{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
 .dropdown-content {
     width: 100%;
     text-align: left;

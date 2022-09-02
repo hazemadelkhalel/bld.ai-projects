@@ -11,6 +11,10 @@ const cat = new Map([
   ['6', "aws-certification"],
   ['7', "drawing"]
 ]);
+window.addEventListener("load" , () =>{
+    getAlldata();
+  });
+
 let categoryTitle=[];
 categoryTitle['python']="Expand your career opportunities with Python";
 categoryTitle['web-development']="Build websites and applications with Web Development";
@@ -39,24 +43,46 @@ categoryBtn['drawing']="Explore Drawing";
 document.getElementById("search-btn").addEventListener("click", function(event){
     event.preventDefault()
   });
-  function calcaluteNumberofCourses(){
-    var clientWidth = document.getElementById('courses').clientWidth;
-    numberofcoursesperunit = parseInt(clientWidth / 250);
-}
-  window.addEventListener('resize', function(event){
-    var clientWidth = document.getElementById('courses').clientWidth;
-    if(parseInt(clientWidth / 250) == 0){
-        getAlldata();
-    }
-    else if(parseInt(clientWidth / 250) != numberofcoursesperunit){
-        getAlldata();
-    } 
-});
-window.addEventListener("load" , () =>{
-    getAlldata();
 
-  });
 
+// const debounce = (fn,delay ) => {
+//     let timeoutID; // Initially undefined
+    
+//     return function(...args){
+      
+//       // cancel previously unexecuted timeouts
+//       if(timeoutID){
+//         clearTimeout(timeoutID);
+//       }
+      
+//       timeoutID = setTimeout( () => {
+//         fn(...args);
+//       }, delay)
+//     }
+//   }
+  
+  
+//   window.addEventListener('resize', debounce(e => {    var clientWidth = document.getElementById('courses').clientWidth;
+//   console.log("fired");
+//   if(parseInt(clientWidth / 250) == 0){
+//       getAlldata();
+//   }
+//   else if(parseInt(clientWidth / 250) != numberofcoursesperunit){
+//       getAlldata();
+//   }
+//   }, 130))
+
+
+// function calc(){
+    // var clientWidth = document.getElementById('courses').clientWidth;
+    // console.log("fired");
+    // if(parseInt(clientWidth / 250) == 0){
+    //     getAlldata();
+    // }
+    // else if(parseInt(clientWidth / 250) != numberofcoursesperunit){
+    //     getAlldata();
+    // }
+// }
 
 
 function customizeCategory(id){
@@ -94,10 +120,14 @@ function customizeCategory(id){
 
 function init(data){
     let courses = data["results"];
+    alldata = '';
     alldata = courses;
     addCourses();
 }
-
+function calcaluteNumberofCourses(){
+    var clientWidth = document.getElementById('courses').clientWidth;
+    numberofcoursesperunit = parseInt(clientWidth / 250);
+}
 function change_info(id){
     let div = document.querySelector('.text3s1');
     div.innerHTML = '';
@@ -119,8 +149,8 @@ function addCourses() {
     if(numberofcourses == 0)numberofcourses++;
     let ids = 0;
     res1 += "<div class=" + '"' + "carousel-item active" + '"' + ">";
-    res1 += "<div class="+ '"'+ "d-flex justify-content-center"+ '"' +">";
-    for (var i = 0; i < Math.min(alldata.length, numberofcoursesperunit); i++) {
+    res1 += "<div class="+ '"'+ "haha"+ '"' +">";
+    for (var i = 0; i < Math.min(numberofcourses, numberofcoursesperunit); i++) {
         let author = alldata[i]["visible_instructors"][0]["title"];
         let image = alldata[i]["image_480x270"];
         let price = alldata[i]["price"];
@@ -128,7 +158,7 @@ function addCourses() {
         let title = alldata[i]["title"];
         
         res1 += "<li id = " + '"' + "course" + ids + '"' + " class = " + '"' + "text3s2"+ '"'+ ">";
-        res1 += `<img src="${image}">
+        res1 += `<img class = "haha2" src="${image}">
                 <div class = "caption">
                     <h4>${title}</h4>
                     <p>${author}</p>
@@ -141,16 +171,13 @@ function addCourses() {
     }
     res1 += "</div>";
     res1 += "</div>";
-    numberofcourses -= Math.min(alldata.length, numberofcoursesperunit);
-    let cnt = 0;
+    numberofcourses -= Math.min(numberofcourses, numberofcoursesperunit);
+    let cnt = Math.min(numberofcourses, numberofcoursesperunit);
     while(numberofcourses > 0){
         res1 += "<div class=" + '"' + "carousel-item" + '"' + ">";
         res1 += "<div class="+ '"'+ "d-flex justify-content-center"+ '"' +">";
-        let sz = Math.min(numberofcourses, 5);
+        let sz = Math.min(numberofcourses, numberofcoursesperunit);
         numberofcourses -= sz;
-        if(sz < numberofcoursesperunit){
-            cnt = Math.max(0, cnt - 2);
-        }
         for (var i = cnt; i < Math.min(cnt + numberofcoursesperunit, alldata.length); i++) {
             let author = alldata[i]["visible_instructors"][0]["title"];
             let image = alldata[i]["image_480x270"];
@@ -168,12 +195,13 @@ function addCourses() {
                     </div>`;
                     res1 += "</li>";
                     res2 += `<a href="#">${title}</a>`;
+                    ids++;
         }
         cnt+= numberofcoursesperunit;
-        ids++;
         res1 += "</div>";
         res1 += "</div>";
     }
+    document.getElementsByClassName("carousel-inner")[0].innerHTML = '';
     document.getElementsByClassName("carousel-inner")[0].innerHTML = res1;
     document.getElementById("myDropdown").innerHTML = res2;
 
@@ -232,53 +260,53 @@ function getAlldata(){
 
 
 
-//   function changeNumOfCoursesSZ5(sz) {
-//     if(sz.matches){
-//         numberofcoursesperunit = 5;
-//       getAlldata();
-//     }
-//   }
-//   function changeNumOfCoursesSZ4(sz) {
-//     if(sz.matches){
-//         numberofcoursesperunit = 4;
-//         getAlldata();
-//     }
-//   }
-//   function changeNumOfCoursesSZ3(sz) {
-//     if(sz.matches){
-//         numberofcoursesperunit = 3;
-//         getAlldata();
-//     }
-//   }
-//   function changeNumOfCoursesSZ2(sz) {
-//     if(sz.matches){
-//         numberofcoursesperunit = 2;
-//         getAlldata();
-//     }
-//   }
-//   function changeNumOfCoursesSZ1(sz) {
-//     if(sz.matches){
-//         numberofcoursesperunit = 1;
-//         getAlldata();
-//     }
-//   }
+  function changeNumOfCoursesSZ5(sz) {
+    if(sz.matches){
+        numberofcoursesperunit = 5;
+      getAlldata();
+    }
+  }
+  function changeNumOfCoursesSZ4(sz) {
+    if(sz.matches){
+        numberofcoursesperunit = 4;
+        getAlldata();
+    }
+  }
+  function changeNumOfCoursesSZ3(sz) {
+    if(sz.matches){
+        numberofcoursesperunit = 3;
+        getAlldata();
+    }
+  }
+  function changeNumOfCoursesSZ2(sz) {
+    if(sz.matches){
+        numberofcoursesperunit = 2;
+        getAlldata();
+    }
+  }
+  function changeNumOfCoursesSZ1(sz) {
+    if(sz.matches){
+        numberofcoursesperunit = 1;
+        getAlldata();
+    }
+  }
   
-//   const sz5 = window.matchMedia("(min-width:1401px)");
-//   const sz4 = window.matchMedia("(min-width:1151px) and (max-width: 1400px)");
-//   const sz3 = window.matchMedia("(min-width:901px) and (max-width: 1150px)");
-//   const sz2 = window.matchMedia("(min-width:701px) and (max-width: 900px)");
-//   const sz1 = window.matchMedia("(max-width: 700px)");
-//   changeNumOfCoursesSZ5(sz5); // Call listener function at run time
-//   changeNumOfCoursesSZ4(sz4); // Call listener function at run time
-//   changeNumOfCoursesSZ3(sz3); // Call listener function at run time
-//   changeNumOfCoursesSZ2(sz2); // Call listener function at run time
-//   changeNumOfCoursesSZ1(sz1); // Call listener function at run time
+  const sz5 = window.matchMedia("(min-width:1401px)");
+  const sz4 = window.matchMedia("(min-width:1151px) and (max-width: 1400px)");
+  const sz3 = window.matchMedia("(min-width:901px) and (max-width: 1150px)");
+  const sz2 = window.matchMedia("(min-width:701px) and (max-width: 900px)");
+  const sz1 = window.matchMedia("(max-width: 700px)");
+  changeNumOfCoursesSZ5(sz5); // Call listener function at run time
+  changeNumOfCoursesSZ4(sz4); // Call listener function at run time
+  changeNumOfCoursesSZ3(sz3); // Call listener function at run time
+  changeNumOfCoursesSZ2(sz2); // Call listener function at run time
+  changeNumOfCoursesSZ1(sz1); // Call listener function at run time
   
-//   sz5.addListener(changeNumOfCoursesSZ5); // Attach listener function on state changes
-//   sz4.addListener(changeNumOfCoursesSZ4); // Attach listener function on state changes
-//   sz3.addListener(changeNumOfCoursesSZ3); // Attach listener function on state changes
-//   sz2.addListener(changeNumOfCoursesSZ2); // Attach listener function on state changes
-//   sz1.addListener(changeNumOfCoursesSZ1); // Attach listener function on state changes
+  sz5.addListener(changeNumOfCoursesSZ5); // Attach listener function on state changes
+  sz4.addListener(changeNumOfCoursesSZ4); // Attach listener function on state changes
+  sz3.addListener(changeNumOfCoursesSZ3); // Attach listener function on state changes
+  sz2.addListener(changeNumOfCoursesSZ2); // Attach listener function on state changes
+  sz1.addListener(changeNumOfCoursesSZ1); // Attach listener function on state changes
 
 
 
